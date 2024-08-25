@@ -17,6 +17,14 @@ $(call inherit-product, device/xiaomi/garnet/device.mk)
 # Inherit from the MiuiCamera setup
 $(call inherit-product-if-exists, vendor/xiaomi/garnet-miuicamera/products/miuicamera.mk)
 
+# RisingOS Flags
+WITH_GMS := true
+TARGET_CORE_GMS := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_HAS_UDFPS := true
+TARGET_USE_GOOGLE_TELEPHONY := true
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
+
 PRODUCT_NAME := lineage_garnet
 PRODUCT_DEVICE := garnet
 PRODUCT_MANUFACTURER := Xiaomi
@@ -29,7 +37,9 @@ PRODUCT_SYSTEM_DEVICE := garnet
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="garnet_global-user 14 UKQ1.231003.002 V816.0.9.0.UNRMIXM release-keys" \
     TARGET_DEVICE=$(PRODUCT_SYSTEM_DEVICE) \
-    TARGET_PRODUCT=$(PRODUCT_SYSTEM_NAME)
+    TARGET_PRODUCT=$(PRODUCT_SYSTEM_NAME) \
+    RISING_CHIPSET="Qualcomm Snapdragon 7s gen 2" \
+    RISING_MAINTAINER="Coptan"
 
 BUILD_FINGERPRINT := Redmi/garnet_global/garnet:14/UKQ1.231003.002/V816.0.9.0.UNRMIXM:user/release-keys
 
